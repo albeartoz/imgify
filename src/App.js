@@ -1,7 +1,19 @@
+import React, { useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { getLyrics, getSong } from 'genius-lyrics-api';
 
 function App() {
+ 
+  const options = {
+    apiKey: '1MZyn5-y_ITCnG6RqGxbT2_yOXGf1RIqsTB_zPl6KWNz3Z7vm63o69cWChh6nubd',
+    title: 'Blinding Lights',
+    artist: 'The Weeknd',
+    optimizeQuery: true
+  };
+  
+  getLyrics(options).then((lyrics) => console.log(lyrics));
+
   return (
     <div className="App">
       <header className="App-header">
